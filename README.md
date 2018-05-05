@@ -6,6 +6,8 @@
 <img src="https://github.com/qyfeng009/QHalfFaceMakeup/blob/master/demo_show.gif" width="266" height="500"/>
 <img src="https://github.com/qyfeng009/QHalfFaceMakeup/blob/master/user_show.gif" width="266" height="500"/>
 </p>
+
+
 #### 使用
 使用超简单的
 ```swift
@@ -14,7 +16,6 @@
     halfFace.adjustOS = 57
     halfFace.show()
 ```
-
 #### 思路
 控件主要由两个部分组成： QHalfFaceMakeup 和  QHalfFaceMakeupVC 。
 ###### QHalfFaceMakeup 是最外层，暴露接口，负责初始化控件和弹出内容页面。
