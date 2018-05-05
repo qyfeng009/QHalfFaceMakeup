@@ -1,13 +1,13 @@
 # QHalfFaceMakeup
 封装弹出页面，可跟随手势滑动消失
 
-近来无事，就写了个弹出页面的控件玩，类似微信读书中的讲书播放页面。动画弹出页面后可跟随手势下滑动消失，上效果（图1是demo效果，图2是项目中应用效果）。
+近来无事，就写了个弹出页面的控件玩，类似微信读书中的讲书播放页面。动画弹出页面后可跟随手势下滑动消失，上效果（图1是demo效果，图2是项目中应用效果）。
 <p align="center">
 <img src="https://github.com/qyfeng009/QHalfFaceMakeup/blob/master/demo_show.gif" width="266" height="500"/>
 <img src="https://github.com/qyfeng009/QHalfFaceMakeup/blob/master/user_show.gif" width="266" height="500"/>
 </p>
 #### 使用
-使用超简单的
+使用超简单的
 ```swift
     let tbv = TableView(frame: self.view.frame, style: .plain)
     let halfFace = QHalfFaceMakeup(self, tbv)
@@ -16,7 +16,7 @@
 ```
 
 #### 思路
-控件主要由两个部分组成： QHalfFaceMakeup 和  QHalfFaceMakeupVC 。
+控件主要由两个部分组成： QHalfFaceMakeup 和  QHalfFaceMakeupVC 。
 ###### QHalfFaceMakeup 是最外层，暴露接口，负责初始化控件和弹出内容页面。
 >重点：弹出页面的操作这里采用模态推出页面，并且 modalPresentationStyle = .overFullScreen 。
 >>开始时的想法是：采用弹出 View 作为容器，经过尝试不管是把 View 加载 viewController 上，还是加在 window 上都没有达到我想要的效果，遂弃之。
