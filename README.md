@@ -102,4 +102,4 @@ class QHalfFaceMakeup: NSObject {
         }
     }
 ```
-至此就不贴代码，也没人看。想追究的小伙伴可以点击 [QHalfFaceMakeup](https://github.com/qyfeng009/QHalfFaceMakeup)追查到底！
+至此就不贴代码，详见源码。
