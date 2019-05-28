@@ -16,6 +16,7 @@
 		34F9D936202404B100950701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F9D935202404B100950701 /* Assets.xcassets */; };
 		34F9D939202404B100950701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F9D937202404B100950701 /* LaunchScreen.storyboard */; };
 		34F9D9412024050700950701 /* QHalfFaceMakeup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F9D9402024050700950701 /* QHalfFaceMakeup.swift */; };
+		5E2A8E0D229D04A50032C02E /* Extension_UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2A8E0C229D04A40032C02E /* Extension_UIDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		34F9D938202404B100950701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34F9D93A202404B100950701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34F9D9402024050700950701 /* QHalfFaceMakeup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QHalfFaceMakeup.swift; sourceTree = "<group>"; };
+		5E2A8E0C229D04A40032C02E /* Extension_UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension_UIDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				34F9D92E202404B100950701 /* AppDelegate.swift */,
 				34F9D930202404B100950701 /* ViewController.swift */,
 				34F9D9402024050700950701 /* QHalfFaceMakeup.swift */,
+				5E2A8E0C229D04A40032C02E /* Extension_UIDevice.swift */,
 				3410EF8B20255AE1009AE9D1 /* down_arrow.png */,
 				3410EF8D20255AE1009AE9D1 /* down_arrow@2x.png */,
 				3410EF8C20255AE1009AE9D1 /* down_arrow@3x.png */,
@@ -108,6 +111,7 @@
 				TargetAttributes = {
 					34F9D92A202404B100950701 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F9D931202404B100950701 /* ViewController.swift in Sources */,
+				5E2A8E0D229D04A50032C02E /* Extension_UIDevice.swift in Sources */,
 				34F9D92F202404B100950701 /* AppDelegate.swift in Sources */,
 				34F9D9412024050700950701 /* QHalfFaceMakeup.swift in Sources */,
 			);
@@ -300,7 +305,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qyfeng.QHalfFaceMakeup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -315,7 +320,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qyfeng.QHalfFaceMakeup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

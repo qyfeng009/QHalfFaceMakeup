@@ -49,21 +49,21 @@ class QHalfFaceMakeupVC: UIViewController, UIGestureRecognizerDelegate, UIScroll
         view.addGestureRecognizer(tapGesture)
         self.view.addSubview(baseView)
         baseView.addSubview(topView)
-        baseView.bringSubview(toFront: topView)
+        baseView.bringSubviewToFront(topView)
 
         baseView.addGestureRecognizer(closePanGesture)
     }
     func addFace(_ face: UIView) {
-        var bottom: CGFloat = 64
-        if screenHeight == 812 {
-            bottom = 88
+        var bottom: CGFloat = 0
+        if UIDevice.isXSeries() == true {
+            bottom += 34
         }
         face.frame = CGRect(x: 0, y: topView.frame.size.height, width: baseView.frame.size.width, height: baseView.frame.size.height - bottom - topView.frame.size.height)
         if face is UIScrollView {
             (face as? UIScrollView)?.delegate = self
         }
         baseView.addSubview(face)
-        baseView.sendSubview(toBack: face)
+        baseView.sendSubviewToBack(face)
     }
 
     lazy var baseView: UIView! = {
@@ -94,18 +94,13 @@ class QHalfFaceMakeupVC: UIViewController, UIGestureRecognizerDelegate, UIScroll
     }()
     var adjustOS: CGFloat! = 0 {
         didSet {
-            print(adjustOS)
             baseView.frame.size.height += -(adjustOS)
         }
     }
     /// 显示
     open func show() {
-        var top: CGFloat = 64
-        if screenHeight == 812 {
-            top = 88
-        }
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [.curveLinear], animations: {
-            self.baseView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.size.height + top + self.adjustOS)
+            self.baseView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.size.height + self.adjustOS)
             self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         }, completion: { (finish: Bool) in
 
@@ -125,18 +120,14 @@ class QHalfFaceMakeupVC: UIViewController, UIGestureRecognizerDelegate, UIScroll
 
     // MARK: - 滑动关闭页面
     @objc private func panClose(_ panGesture: UIPanGestureRecognizer) {
-        var top: CGFloat = 64
-        if screenHeight == 812 {
-            top = 88
-        }
         let offsetY = panGesture.translation(in: panGesture.view).y
         if offsetY >= 0 {
             UIView.animate(withDuration: 0.13, animations: {
-                self.baseView.transform = CGAffineTransform(translationX: 0, y: -self.baseView.frame.size.height + top + offsetY)
+                self.baseView.transform = CGAffineTransform(translationX: 0, y: -self.baseView.frame.size.height + offsetY)
             })
         }
         if panGesture.state == .ended || panGesture.state == .failed || panGesture.state == .cancelled {
-            if offsetY >= (baseView.frame.size.height - top)/4 {
+            if offsetY >= (baseView.frame.size.height)/4 {
                 close()
             } else {
                 show()

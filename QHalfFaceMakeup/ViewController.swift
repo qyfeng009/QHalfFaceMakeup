@@ -10,7 +10,7 @@ import UIKit
 
 class TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
-    override init(frame: CGRect, style: UITableViewStyle) {
+    override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: .plain)
         delegate = self
         dataSource = self
@@ -35,9 +35,7 @@ class TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     }
 }
 class ViewController: UIViewController {
-
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,12 +47,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clickBtn(_ sender: Any) {
-
         let tbv = TableView(frame: self.view.frame, style: .plain)
-        let v = UIView(frame: CGRect(x: 0, y: 0, width: 414, height: 700))
-        v.backgroundColor = .yellow
         let halfFace = QHalfFaceMakeup(self, tbv)
-        halfFace.adjustOS = 57
+        halfFace.adjustOS = 200
         halfFace.show()
     }
 
