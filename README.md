@@ -83,18 +83,14 @@ class QHalfFaceMakeup: NSObject {
 ```
  // MARK: - 滑动关闭页面
     @objc private func panClose(_ panGesture: UIPanGestureRecognizer) {
-        var top: CGFloat = 64
-        if screenHeight == 812 {
-            top = 88
-        }
         let offsetY = panGesture.translation(in: panGesture.view).y
         if offsetY >= 0 {
             UIView.animate(withDuration: 0.13, animations: {
-                self.baseView.transform = CGAffineTransform(translationX: 0, y: -self.baseView.frame.size.height + top + offsetY)
+                self.baseView.transform = CGAffineTransform(translationX: 0, y: -self.baseView.frame.size.height + offsetY)
             })
         }
         if panGesture.state == .ended || panGesture.state == .failed || panGesture.state == .cancelled {
-            if offsetY >= (baseView.frame.size.height - top)/4 {
+            if offsetY >= (baseView.frame.size.height)/4 {
                 close()
             } else {
                 show()
@@ -102,4 +98,4 @@ class QHalfFaceMakeup: NSObject {
         }
     }
 ```
-至此就不贴代码，详见源码。
+详见源码。
